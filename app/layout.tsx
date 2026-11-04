@@ -15,8 +15,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "THE NALANDA CAMPUS FIA . Kolhapur",
-  description: "CBSE school in Baner, Pune. Nursery to Class 10.",
+  title: "The Nalanda Campus · Kolhapur",
+  description: "School in Kolhapur, Maharashtra. Admissions open.",
 };
 
 export default function RootLayout({

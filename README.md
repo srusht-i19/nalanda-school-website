@@ -1,6 +1,6 @@
     # Nalanda School Website
 
-Static 8-page website for a kolhapur school (placeholder name: THE NALANDA CAMPUS FIA).
+Static 8-page website for a kolhapur school (placeholder name: THE NALANDA CAMPUS FIA,KOLHAPUR).
 Built with Next.js (static export), TypeScript and Tailwind CSS v4.
 
 ## Run
