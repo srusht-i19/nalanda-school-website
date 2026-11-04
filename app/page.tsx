@@ -1,29 +1,21 @@
+import { Container } from "@/components/ui/container";
+import { LinkButton } from "@/components/ui/link-button";
+import { school } from "@/content/school";
+
 export default function Home() {
   return (
-    <main className="mx-auto max-w-[1200px] px-5 py-16 min-[900px]:px-8">
-      <h1>Hello school</h1>
-      <p className="text-muted mt-4">Theme check: Fraunces + Inter.</p>
-
+    <Container className="py-16">
+      <h1>{school.name}</h1>
+      <p className="text-muted-foreground mt-4 text-lg">
+        Shell check: header, footer and mobile menu. The real Home page comes on
+        Day 3.
+      </p>
       <div className="mt-6 flex flex-wrap gap-3">
-        <a href="#" className="btn btn-primary">
-          Start admission
-        </a>
-        <a href="#" className="btn btn-secondary">
-          Book a campus visit
-        </a>
+        <LinkButton href="/admissions">Enquire now</LinkButton>
+        <LinkButton href="/kit" variant="outline">
+          See the UI kit
+        </LinkButton>
       </div>
-
-      <div className="rounded-card bg-surface-2 shadow-card mt-10 p-6">
-        <h3>Card check</h3>
-        <p className="text-muted mt-2">16px radius, soft shadow, muted text.</p>
-      </div>
-
-      <div className="mt-10 flex flex-wrap gap-3">
-        <div className="rounded-card bg-primary h-12 w-12" />
-        <div className="rounded-card bg-accent h-12 w-12" />
-        <div className="rounded-card border-line bg-surface h-12 w-12 border" />
-        <div className="rounded-card bg-placeholder h-12 w-12" />
-      </div>
-    </main>
+    </Container>
   );
 }
