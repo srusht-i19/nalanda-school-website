@@ -15,7 +15,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Nirmaan International School · Pune",
+  title: "THE NALANDA CAMPUS FIA . Kolhapur",
   description: "CBSE school in Baner, Pune. Nursery to Class 10.",
 };
 

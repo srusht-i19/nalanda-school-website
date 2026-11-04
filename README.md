@@ -1,6 +1,6 @@
-    # Pune School Website
+    # Nalanda School Website
 
-Static 8-page website for a Pune school (placeholder name: Nirmaan International School).
+Static 8-page website for a kolhapur school (placeholder name: THE NALANDA CAMPUS FIA).
 Built with Next.js (static export), TypeScript and Tailwind CSS v4.
 
 ## Run
