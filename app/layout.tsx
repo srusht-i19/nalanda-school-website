@@ -19,7 +19,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: `${school.name} · ${school.city}`,
+  title: {
+    default: `${school.name} · ${school.city}`,
+    template: `%s · ${school.name}`,
+  },
   description: `School in ${school.city}, Maharashtra. Admissions open for ${school.session}.`,
 };
 
