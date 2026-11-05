@@ -4,6 +4,7 @@ import "./globals.css";
 import { Footer } from "@/components/sections/footer";
 import { Header } from "@/components/sections/header";
 import { school } from "@/content/school";
+import { AnnouncementBar } from "@/components/sections/announcement-bar";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -36,6 +37,8 @@ export default function RootLayout({
         >
           Skip to content
         </a>
+        <AnnouncementBar />
+
         <Header />
         <main id="content" className="flex-1">
           {children}

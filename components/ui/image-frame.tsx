@@ -12,6 +12,7 @@ type Props = {
   alt: string;
   src?: string;
   ratio?: keyof typeof ratios;
+  fit?: "cover" | "contain";
   priority?: boolean;
   className?: string;
 };
@@ -20,6 +21,7 @@ export function ImageFrame({
   alt,
   src,
   ratio = "4/3",
+  fit = "cover",
   priority,
   className,
 }: Props) {
@@ -38,7 +40,7 @@ export function ImageFrame({
           fill
           priority={priority}
           sizes="(min-width: 900px) 50vw, 100vw"
-          className="object-cover"
+          className={fit === "contain" ? "object-contain p-4" : "object-cover"}
         />
       ) : (
         <div

@@ -1,21 +1,23 @@
-import { Container } from "@/components/ui/container";
-import { LinkButton } from "@/components/ui/link-button";
-import { school } from "@/content/school";
+import { CampusStrip } from "@/components/sections/campus-strip";
+import { CtaBand } from "@/components/sections/cta-band";
+import { EventsList } from "@/components/sections/events-list";
+import { HomeHero } from "@/components/sections/home-hero";
+import { ProgramCards } from "@/components/sections/program-cards";
+import { StatsStrip } from "@/components/sections/stats-strip";
+import { Testimonials } from "@/components/sections/testimonials";
+import { WhyUs } from "@/components/sections/why-us";
 
 export default function Home() {
   return (
-    <Container className="py-16">
-      <h1>{school.name}</h1>
-      <p className="text-muted-foreground mt-4 text-lg">
-        Shell check: header, footer and mobile menu. The real Home page comes on
-        Day 3.
-      </p>
-      <div className="mt-6 flex flex-wrap gap-3">
-        <LinkButton href="/admissions">Enquire now</LinkButton>
-        <LinkButton href="/kit" variant="outline">
-          See the UI kit
-        </LinkButton>
-      </div>
-    </Container>
+    <>
+      <HomeHero />
+      <StatsStrip />
+      <WhyUs />
+      <ProgramCards />
+      <CampusStrip />
+      <EventsList />
+      <Testimonials />
+      <CtaBand />
+    </>
   );
 }

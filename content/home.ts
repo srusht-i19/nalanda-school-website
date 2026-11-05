@@ -31,7 +31,9 @@ export const home = {
     title: "Little Learners, Big Dreams, Global Citizens!",
     lead: "A joyful and enriching learning environment where children are encouraged to explore, question, create and grow.",
     check: "Nurturing the Brain. Strengthening the Body. Inspiring the Soul.",
-    imageAlt: "Placeholder photo: students at FIA – The Nalanda Campus",
+    image: "/images/hero.webp",
+    imageAlt:
+      "Nalanda's owl mascot dressed as a scholar, holding a book and a peacock feather",
   },
   // TODO: replace with years, students, teacher ratio and results once the school sends them
   stats: [
