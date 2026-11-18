@@ -1,16 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { school } from "@/content/school";
 
-const schema = z.object({
+const base = z.object({
   parentName: z.string().trim().min(2, "Please enter your name"),
-  childName: z.string().trim().min(2, "Please enter your child's name"),
-  stage: z.string().min(1, "Please choose a stage"),
+  childName: z.string().trim(),
+  stage: z.string(),
   phone: z
     .string()
     .trim()
@@ -24,8 +24,36 @@ const schema = z.object({
   botcheck: z.boolean(),
 });
 
-type FormValues = z.infer<typeof schema>;
+type FormValues = z.infer<typeof base>;
 type Status = "idle" | "sending" | "success" | "error";
+type Variant = "admission" | "contact";
+
+function makeSchema(variant: Variant) {
+  return base.superRefine((v, ctx) => {
+    if (variant === "admission") {
+      if (v.childName.length < 2) {
+        ctx.addIssue({
+          code: "custom",
+          path: ["childName"],
+          message: "Please enter your child's name",
+        });
+      }
+      if (!v.stage) {
+        ctx.addIssue({
+          code: "custom",
+          path: ["stage"],
+          message: "Please choose a stage",
+        });
+      }
+    } else if (v.message.length < 5) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["message"],
+        message: "Please write a short message",
+      });
+    }
+  });
+}
 
 const inputClass =
   "min-h-11 w-full rounded-xl border border-line bg-surface-2 px-4 text-base text-ink placeholder:text-placeholder focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary aria-[invalid=true]:border-red-700";
@@ -64,10 +92,13 @@ function Field({
 
 export function EnquiryForm({
   source = "Admissions page",
+  variant = "admission",
 }: {
   source?: string;
+  variant?: Variant;
 }) {
   const [status, setStatus] = useState<Status>("idle");
+  const schema = useMemo(() => makeSchema(variant), [variant]);
   const {
     register,
     handleSubmit,
@@ -85,6 +116,8 @@ export function EnquiryForm({
       botcheck: false,
     },
   });
+
+  const isAdmission = variant === "admission";
 
   async function onSubmit(values: FormValues) {
     const { botcheck, ...fields } = values;
@@ -108,7 +141,7 @@ export function EnquiryForm({
         },
         body: JSON.stringify({
           access_key: key,
-          subject: `New enquiry from ${school.name} website (${source})`,
+          subject: `New ${isAdmission ? "admission enquiry" : "contact message"} from ${school.name} website (${source})`,
           from_name: school.name,
           source,
           ...fields,
@@ -131,8 +164,9 @@ export function EnquiryForm({
       <div role="status" className="rounded-card bg-surface p-8">
         <h3>Thank you!</h3>
         <p className="text-muted-foreground mt-3 text-lg">
-          We have received your enquiry. Our admissions team will contact you
-          soon.
+          {isAdmission
+            ? "We have received your enquiry. Our admissions team will contact you soon."
+            : "We have received your message. We will get back to you soon."}
         </p>
         <Button
           type="button"
@@ -140,7 +174,7 @@ export function EnquiryForm({
           className="mt-6 min-h-11"
           onClick={() => setStatus("idle")}
         >
-          Send another enquiry
+          {isAdmission ? "Send another enquiry" : "Send another message"}
         </Button>
       </div>
     );
@@ -155,7 +189,7 @@ export function EnquiryForm({
       <div className="grid gap-5 min-[640px]:grid-cols-2">
         <Field
           id="parentName"
-          label="Parent's name"
+          label={isAdmission ? "Parent's name" : "Your name"}
           required
           error={errors.parentName?.message}
         >
@@ -170,20 +204,24 @@ export function EnquiryForm({
             {...register("parentName")}
           />
         </Field>
-        <Field
-          id="childName"
-          label="Child's name"
-          required
-          error={errors.childName?.message}
-        >
-          <input
+        {isAdmission && (
+          <Field
             id="childName"
-            className={inputClass}
-            aria-invalid={!!errors.childName}
-            aria-describedby={errors.childName ? "childName-error" : undefined}
-            {...register("childName")}
-          />
-        </Field>
+            label="Child's name"
+            required
+            error={errors.childName?.message}
+          >
+            <input
+              id="childName"
+              className={inputClass}
+              aria-invalid={!!errors.childName}
+              aria-describedby={
+                errors.childName ? "childName-error" : undefined
+              }
+              {...register("childName")}
+            />
+          </Field>
+        )}
         <Field
           id="phone"
           label="Mobile number"
@@ -219,30 +257,33 @@ export function EnquiryForm({
         </Field>
       </div>
 
-      <Field
-        id="stage"
-        label="Stage applying for"
-        required
-        error={errors.stage?.message}
-      >
-        <select
+      {isAdmission && (
+        <Field
           id="stage"
-          className={inputClass}
-          aria-invalid={!!errors.stage}
-          aria-describedby={errors.stage ? "stage-error" : undefined}
-          {...register("stage")}
+          label="Stage applying for"
+          required
+          error={errors.stage?.message}
         >
-          <option value="">Choose a stage</option>
-          <option value="Pre-primary">Pre-primary</option>
-          <option value="Primary">Primary</option>
-          <option value="Middle">Middle</option>
-          <option value="Secondary">Secondary</option>
-        </select>
-      </Field>
+          <select
+            id="stage"
+            className={inputClass}
+            aria-invalid={!!errors.stage}
+            aria-describedby={errors.stage ? "stage-error" : undefined}
+            {...register("stage")}
+          >
+            <option value="">Choose a stage</option>
+            <option value="Pre-primary">Pre-primary</option>
+            <option value="Primary">Primary</option>
+            <option value="Middle">Middle</option>
+            <option value="Secondary">Secondary</option>
+          </select>
+        </Field>
+      )}
 
       <Field
         id="message"
-        label="Message (optional)"
+        label={isAdmission ? "Message (optional)" : "Message"}
+        required={!isAdmission}
         error={errors.message?.message}
       >
         <textarea
@@ -270,7 +311,7 @@ export function EnquiryForm({
           role="alert"
           className="rounded-xl bg-red-50 p-4 text-sm text-red-800"
         >
-          Sorry, we could not send your enquiry. Please try again, or call us on{" "}
+          Sorry, we could not send your message. Please try again, or call us on{" "}
           {school.phone}.
         </p>
       )}
@@ -280,7 +321,11 @@ export function EnquiryForm({
         disabled={status === "sending"}
         className="bg-accent text-ink hover:bg-accent-hover min-h-11 rounded-full px-8 font-semibold"
       >
-        {status === "sending" ? "Sending..." : "Send enquiry"}
+        {status === "sending"
+          ? "Sending..."
+          : isAdmission
+            ? "Send enquiry"
+            : "Send message"}
       </Button>
     </form>
   );

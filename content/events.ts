@@ -12,6 +12,7 @@ export const events: SchoolEvent[] = [
     title: "Children's Day carnival",
     description: "Placeholder event.",
   },
+
   {
     id: "e2",
     date: "2026-11-28",

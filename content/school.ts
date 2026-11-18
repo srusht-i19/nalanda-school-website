@@ -9,7 +9,7 @@ export const school = {
   phone: "+91 231 000 0000", // TODO: real number
   email: "admissions@example.com", // TODO: real email
   address: {
-    line1: "Address line to be added",
+    line1: "Zilla Parishad Rd, Nagalapark, Kolhapur, Maharashtra 416003",
     city: "Kolhapur",
     state: "Maharashtra",
     pin: "416001",
