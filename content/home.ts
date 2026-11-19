@@ -8,6 +8,7 @@ const whyCards: WhyCard[] = [
     title: "Student-centred teaching",
     text: "Children learn through exploration, discussion, projects and hands-on activities, guided by teachers who act as mentors.",
   },
+
   {
     icon: "book",
     title: "Learning for life",

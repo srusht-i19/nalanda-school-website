@@ -25,7 +25,18 @@ export default function AdmissionsPage() {
         title={a.hero.title}
         lead={a.hero.lead}
       />
-
+      {/* Enquiry form */}
+      <Section tone="surface" className="pb-6">
+        <div id="enquire" className="scroll-mt-24">
+          <SectionHeading eyebrow={a.form.eyebrow} title={a.form.title} />
+          <p className="text-muted-foreground mt-4 max-w-[620px] text-lg">
+            {a.form.lead}
+          </p>
+          <div className="mt-8 max-w-[820px]">
+            <EnquiryForm source="Admissions page" />
+          </div>
+        </div>
+      </Section>
       {/* Open banner */}
       <section className="pb-4">
         <div className="mx-auto max-w-[1200px] px-4 min-[900px]:px-6">
@@ -128,19 +139,6 @@ export default function AdmissionsPage() {
             </AccordionItem>
           ))}
         </Accordion>
-      </Section>
-
-      {/* Enquiry form */}
-      <Section tone="surface">
-        <div id="enquire" className="scroll-mt-24">
-          <SectionHeading eyebrow={a.form.eyebrow} title={a.form.title} />
-          <p className="text-muted-foreground mt-4 max-w-[620px] text-lg">
-            {a.form.lead}
-          </p>
-          <div className="mt-8 max-w-[820px]">
-            <EnquiryForm source="Admissions page" />
-          </div>
-        </div>
       </Section>
     </>
   );

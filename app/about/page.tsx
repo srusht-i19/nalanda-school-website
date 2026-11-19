@@ -39,7 +39,11 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
-          <ImageFrame alt={about.story.imageAlt} ratio="4/3" />
+          <ImageFrame
+            src="/images/gallery/nalanda-building-2.webp"
+            alt={about.story.imageAlt}
+            ratio="4/3"
+          />
         </div>
       </Section>
 

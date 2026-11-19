@@ -12,7 +12,13 @@ export function CampusStrip() {
       <SectionHeading eyebrow={home.campus.eyebrow} title={home.campus.title} />
       <div className="mt-10 grid grid-cols-2 gap-4 min-[900px]:grid-cols-4">
         {items.map((f) => (
-          <ImageFrame key={f.id} src={f.image} alt={f.title} ratio="3/4" />
+          <ImageFrame
+            key={f.id}
+            src={f.image}
+            alt={f.title}
+            ratio="3/4"
+            className="nalanda-cardborder-2 border-[#157347]/30 transition-colors hover:border-orange-500"
+          />
         ))}
       </div>
       <Link href="/campus" className="mt-8 inline-block font-semibold">

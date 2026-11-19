@@ -21,7 +21,7 @@ export function WhyUs() {
           return (
             <div
               key={c.title}
-              className="rounded-card bg-surface-2 shadow-card flex flex-col gap-3.5 p-7"
+              className="nalanda-card rounded-card bg-surface-2 shadow-card flex flex-col gap-3.5 p-7"
             >
               <Icon aria-hidden="true" className="text-primary h-8 w-8" />
               <h3>{c.title}</h3>

@@ -33,7 +33,12 @@ export default function CampusPage() {
               className="rounded-card bg-surface-2 shadow-card overflow-hidden"
             >
               <ImageFrame
-                alt={`Placeholder photo: ${f.title}`}
+                alt={
+                  f.src
+                    ? `${f.title} at The Nalanda Campus`
+                    : `Placeholder photo: ${f.title}`
+                }
+                src={f.src}
                 ratio="4/3"
                 className="rounded-none"
               />

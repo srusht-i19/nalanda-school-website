@@ -6,6 +6,7 @@ export type Program = {
   intro: string;
   subjects: string[];
   outcome: string;
+  image?: string;
 };
 
 export const programs: Program[] = [
@@ -19,6 +20,7 @@ export const programs: Program[] = [
     subjects: [],
     outcome:
       "Children develop confidence, curiosity, independence and a love for learning.",
+    image: "/images/gallery/primary-image.webp",
   },
   {
     id: "secondary",
@@ -28,6 +30,7 @@ export const programs: Program[] = [
     intro: "Placeholder: secondary section text to be provided by the school.",
     subjects: [],
     outcome: "Placeholder.",
+    image: "/images/gallery/secondary-image.webp",
   },
 ];
 

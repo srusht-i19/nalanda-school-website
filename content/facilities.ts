@@ -10,18 +10,21 @@ export const facilities: Facility[] = [
   {
     id: "robotics-centre",
     title: "Robotics Centre",
+    image: "/images/gallery/photo-26.webp",
     description:
       "Hands-on experience in coding, engineering and 3D printing, with immersive projects and team challenges.",
   },
   {
     id: "pottery-carpentry",
     title: "Pottery and Carpentry Labs",
+    image: "/images/gallery/ganesh-clay-brown.webp",
     description:
       "Children learn by making and creating, from shaping clay to assembling simple wooden creations under supervision.",
   },
   {
     id: "soul-room",
     title: "The Soul Room",
+    image: "/images/gallery/soulroom.webp",
     description:
       "A calm and welcoming space for guided meditation and yoga, adapted to each child's age and needs.",
   },
@@ -31,6 +34,7 @@ export const clubs: Facility[] = [
   {
     id: "heritage",
     title: "Heritage Club",
+    image: "/images/gallery/janmashtami-decoration.webp",
     description:
       "Children discover India's rich heritage and the customs of other countries, building cultural awareness and a global outlook.",
   },

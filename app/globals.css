@@ -135,3 +135,112 @@
     color: var(--color-ink);
   }
 }
+/* Fancy cards for the Home page */
+.nalanda-card {
+  border: 2px solid rgb(21 115 71 / 0.25);
+  border-top: 5px solid #f97316;
+  box-shadow:
+    0 4px 14px rgb(11 61 38 / 0.08),
+    0 1px 3px rgb(11 61 38 / 0.06);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+.nalanda-card:hover {
+  transform: translateY(-6px);
+  border-color: #f97316;
+  box-shadow:
+    0 18px 36px rgb(249 115 22 / 0.2),
+    0 6px 12px rgb(11 61 38 / 0.12);
+}
+
+/* For the dark green stats strip */
+.nalanda-strip {
+  border: 2px solid rgb(251 146 60 / 0.8);
+  box-shadow:
+    0 20px 40px rgb(11 61 38 / 0.28),
+    0 0 0 6px rgb(21 115 71 / 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nalanda-card,
+  .nalanda-card:hover {
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Green and orange borders for every card on every page */
+.rounded-card:not(.bg-primary) {
+  border: 2px solid rgb(21 115 71 / 0.25);
+  border-top: 5px solid #f97316;
+  box-shadow:
+    0 4px 14px rgb(11 61 38 / 0.08),
+    0 1px 3px rgb(11 61 38 / 0.06);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+li.rounded-card:hover,
+a.rounded-card:hover {
+  transform: translateY(-6px);
+  border-color: #f97316;
+  box-shadow:
+    0 18px 36px rgb(249 115 22 / 0.2),
+    0 6px 12px rgb(11 61 38 / 0.12);
+}
+@media (prefers-reduced-motion: reduce) {
+  .rounded-card:not(.bg-primary),
+  li.rounded-card:hover,
+  a.rounded-card:hover {
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Top menu links: green text, orange underline */
+header nav a:not([class*="bg-"]) {
+  position: relative;
+  padding: 0.5rem 0.25rem;
+  font-weight: 600;
+  color: #0b3d26;
+  transition: color 0.2s ease;
+}
+header nav a:not([class*="bg-"])::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  border-radius: 2px;
+  background: #f97316;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+header nav a:not([class*="bg-"]):hover {
+  color: #157347;
+}
+header nav a:not([class*="bg-"]):hover::after,
+header nav a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+header nav a[aria-current="page"] {
+  color: #157347;
+}
+@media (prefers-reduced-motion: reduce) {
+  header nav a:not([class*="bg-"])::after {
+    transition: none;
+  }
+}
+
+/* No card box around the owl mascot */
+[data-hero-mascot] .rounded-card {
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  transform: none !important;
+}

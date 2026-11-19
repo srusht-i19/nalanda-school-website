@@ -10,36 +10,41 @@ export const campusPage = {
   },
   // TODO: replace with real facility details and photos from the school
   facilities: [
-    {
+    /*{
       id: "classrooms",
       title: "Classrooms",
       text: "Placeholder: bright, well-equipped classrooms.",
-    },
+    },*/
+
     {
       id: "labs",
-      title: "Labs",
-      text: "Placeholder: science and computer labs for hands-on learning.",
-    },
-    {
-      id: "library",
-      title: "Library",
-      text: "Placeholder: a quiet reading space with age-appropriate books.",
+      title: "Innovation lab",
+      text: "A hands-on lab where students explore ideas such as AR/VR, 3D printing and technology projects.",
+      src: "/images/gallery/photo-26.webp",
     },
     {
       id: "sports",
       title: "Sports",
-      text: "Placeholder: playground and sports facilities.",
-    },
-    {
-      id: "transport",
-      title: "Transport",
-      text: "Placeholder: school transport details.",
+      text: "An open school ground for obstacle courses, running games and team sports.",
+      src: "/images/gallery/photo-01.webp",
     },
     {
       id: "arts",
       title: "Arts and activity rooms",
-      text: "Placeholder: spaces for art, music and creative activities.",
+      text: "Spaces for art, pottery and creative workshops with visiting artists.",
+      src: "/images/gallery/photo-33.webp",
     },
+    /*{
+      id: "library",
+      title: "Library",
+      text: "Placeholder: a quiet reading space with age-appropriate books.",
+    },
+
+    {
+      id: "transport",
+      title: "Transport",
+      text: "Placeholder: school transport details.",
+    },*/
   ],
   safety: {
     eyebrow: "Safety and security",

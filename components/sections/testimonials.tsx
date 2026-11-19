@@ -19,7 +19,7 @@ export function Testimonials() {
         {testimonials.map((t) => (
           <blockquote
             key={t.id}
-            className="rounded-card bg-surface-2 shadow-card flex w-[280px] shrink-0 snap-start flex-col gap-4 p-7 min-[900px]:w-auto"
+            className="nalanda-card rounded-card bg-surface-2 shadow-card flex w-[280px] shrink-0 snap-start flex-col gap-4 p-7 min-[900px]:w-auto"
           >
             <p className="text-[17px]">&ldquo;{t.quote}&rdquo;</p>
             <footer className="flex items-center gap-3">

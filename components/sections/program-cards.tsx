@@ -23,9 +23,10 @@ export function ProgramCards() {
           <Link
             key={p.id}
             href="/academics"
-            className="rounded-card bg-surface-2 text-ink shadow-card hover:text-ink flex flex-col overflow-hidden"
+            className="nalanda-card rounded-card bg-surface-2 text-ink shadow-card hover:text-ink flex flex-col overflow-hidden"
           >
             <ImageFrame
+              src={p.image}
               alt={`${p.label} photo`}
               ratio="4/3"
               className="rounded-none"

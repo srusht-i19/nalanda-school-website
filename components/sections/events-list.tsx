@@ -26,7 +26,7 @@ export function EventsList() {
             return (
               <article
                 key={e.id}
-                className="rounded-card border-line bg-surface-2 flex items-start gap-5 border p-6"
+                className="nalanda-card rounded-card border-line bg-surface-2 flex items-start gap-5 border p-6"
               >
                 <div className="bg-surface min-w-16 rounded-[12px] px-3.5 py-2.5 text-center">
                   <div className="font-heading text-primary text-[28px] leading-none font-bold">
