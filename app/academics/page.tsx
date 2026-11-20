@@ -6,6 +6,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { academics } from "@/content/academics";
 import { school } from "@/content/school";
+import { PrePrimary } from "@/components/sections/pre-primary";
 
 export const metadata: Metadata = {
   title: "Academics",
@@ -27,6 +28,14 @@ export default function AcademicsPage() {
           eyebrow={academics.intro.eyebrow}
           title={academics.intro.title}
         />
+        <p className="text-muted-foreground mt-6 max-w-[820px] text-lg">
+          The six domains converge to deliver a balanced, immersive, and
+          transformative educational experience. By synergizing communication,
+          financial literacy, logical reasoning, creative expression, physical
+          development, and life skills, Nalanda endeavours to prepare students
+          not merely for academic success, but for a purposeful and accomplished
+          life beyond the classroom.
+        </p>
         <p className="bg-surface text-ink mt-4 inline-block rounded-full px-4 py-1.5 text-sm font-semibold">
           {academics.intro.board}
         </p>
@@ -119,6 +128,7 @@ export default function AcademicsPage() {
       </Section>
 
       <CtaBand />
+      <PrePrimary />
     </>
   );
 }

@@ -11,6 +11,18 @@ export type Program = {
 
 export const programs: Program[] = [
   {
+    id: "pre-primary",
+    label: "Pre-Primary section",
+    ages: "Classes to be confirmed",
+    title: "Pre-Primary: building strong foundations for lifelong learning",
+    intro:
+      "Our Pre-Primary Section provides a joyful, nurturing, and stimulating environment where every child is encouraged to explore, discover, learn, and grow, through our philosophy of Brain, Body and Soul.",
+    subjects: [],
+    outcome:
+      "Children develop essential skills, creativity, curiosity, and confidence.",
+    image: "/images/gallery/photo-01.webp",
+  },
+  {
     id: "primary",
     label: "Primary section",
     ages: "Classes to be confirmed",

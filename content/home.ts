@@ -28,7 +28,7 @@ const whyCards: WhyCard[] = [
 
 export const home = {
   hero: {
-    eyebrow: "Primary and Secondary sections · Kolhapur",
+    eyebrow: "Pre-Primary, Primary and Secondary sections · Kolhapur",
     title: "Little Learners, Big Dreams, Global Citizens!",
     lead: "A joyful and enriching learning environment where children are encouraged to explore, question, create and grow.",
     check: "Nurturing the Brain. Strengthening the Body. Inspiring the Soul.",
@@ -38,7 +38,7 @@ export const home = {
   },
   // TODO: replace with years, students, teacher ratio and results once the school sends them
   stats: [
-    { value: "2", label: "Sections: Primary and Secondary" },
+    { value: "3", label: "Sections: Pre-Primary, Primary and Secondary" },
     { value: "6", label: "Learning domains" },
     { value: "8", label: "Clubs and skill labs" },
     { value: "6+", label: "Sports and fitness activities" },
@@ -50,7 +50,7 @@ export const home = {
   },
   programs: {
     eyebrow: "Programs",
-    title: "One journey, two sections.",
+    title: "One journey, three sections.",
     linkLabel: "See the full curriculum →",
   },
   campus: {

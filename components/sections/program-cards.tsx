@@ -18,7 +18,7 @@ export function ProgramCards() {
           {home.programs.linkLabel}
         </Link>
       </div>
-      <div className="mt-10 grid gap-6 min-[900px]:grid-cols-2">
+      <div className="mt-10 grid gap-6 min-[900px]:grid-cols-3">
         {programs.map((p) => (
           <Link
             key={p.id}
