@@ -6,7 +6,7 @@ export const school = {
   tagline: "Where Learning Blossoms and Every Child Shines",
   motto: "Nurturing the Brain. Strengthening the Body. Inspiring the Soul.",
   session: "2027–28",
-  phone: "+91 231 000 0000", // TODO: real number
+  phone: "+91 95799 23959", // TODO: real number
   email: "admissions@example.com", // TODO: real email
   address: {
     line1: "Zilla Parishad Rd, Nagalapark, Kolhapur, Maharashtra 416003",
@@ -19,9 +19,15 @@ export const school = {
     { days: "Sat", time: "9:00–13:00" },
   ],
   social: [
-    { label: "Facebook", href: "#" },
-    { label: "Instagram", href: "#" },
-    { label: "YouTube", href: "#" },
+    { label: "Facebook", href: "https://www.facebook.com/share/1CRyeM8WNk/" },
+    {
+      label: "Instagram",
+      href: "https://www.instagram.com/thenalandaschool?utm_source=ig_web_button_share_sheet&evlk=ZDNlZDc0MzIxNw==",
+    },
+    {
+      label: "YouTube",
+      href: "https://youtube.com/@thenalandaschool?si=GqKt3mv6MDG5LnhA",
+    },
   ],
   nav: [
     { label: "About", href: "/about" },

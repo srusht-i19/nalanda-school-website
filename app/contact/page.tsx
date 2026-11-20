@@ -5,6 +5,7 @@ import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { contactPage as c } from "@/content/contact-page";
 import { school } from "@/content/school";
+import { Branches } from "@/components/sections/branches";
 
 export const metadata: Metadata = {
   title: "Contact us",
@@ -64,7 +65,6 @@ export default function ContactPage() {
         title={c.hero.title}
         lead={c.hero.lead}
       />
-
       <Section className="pt-8 min-[900px]:pt-12">
         <SectionHeading
           eyebrow={c.detailsHeading.eyebrow}
@@ -105,7 +105,6 @@ export default function ContactPage() {
           </div>
         </div>
       </Section>
-
       <Section tone="white">
         <SectionHeading
           eyebrow={c.mapHeading.eyebrow}
@@ -121,7 +120,6 @@ export default function ContactPage() {
           />
         </div>
       </Section>
-
       <Section>
         <SectionHeading
           eyebrow={c.formHeading.eyebrow}
@@ -147,7 +145,8 @@ export default function ContactPage() {
             </ul>
           </div>
         )}
-      </Section>
+      </Section>{" "}
+      <Branches />
     </>
   );
 }

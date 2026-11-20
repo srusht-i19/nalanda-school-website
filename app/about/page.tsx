@@ -7,6 +7,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { about } from "@/content/about";
 import { faculty } from "@/content/faculty";
 import { school } from "@/content/school";
+import { AboutExtra } from "@/components/sections/about-extra";
 
 export const metadata: Metadata = {
   title: "About us",
@@ -24,7 +25,6 @@ export default function AboutPage() {
         title={about.hero.title}
         lead={about.hero.lead}
       />
-
       {/* Our story */}
       <Section className="pt-8 min-[900px]:pt-12">
         <div className="grid items-center gap-10 min-[900px]:grid-cols-2 min-[900px]:gap-14">
@@ -45,8 +45,8 @@ export default function AboutPage() {
             ratio="4/3"
           />
         </div>
-      </Section>
-
+      </Section>{" "}
+      <AboutExtra />
       {/* Vision and mission */}
       <Section tone="white">
         <SectionHeading
@@ -62,7 +62,6 @@ export default function AboutPage() {
           ))}
         </div>
       </Section>
-
       {/* Principal's message */}
       <Section>
         <div className="grid items-start gap-10 min-[900px]:grid-cols-[360px_1fr] min-[900px]:gap-14">
@@ -86,7 +85,6 @@ export default function AboutPage() {
           </div>
         </div>
       </Section>
-
       {/* Leadership cards */}
       <Section tone="white">
         <SectionHeading
@@ -118,7 +116,6 @@ export default function AboutPage() {
           ))}
         </div>
       </Section>
-
       {/* Affiliations */}
       <Section>
         <SectionHeading
@@ -141,7 +138,6 @@ export default function AboutPage() {
           ))}
         </ul>
       </Section>
-
       <CtaBand />
     </>
   );
