@@ -31,10 +31,10 @@ export function ProgramCards() {
               ratio="4/3"
               className="rounded-none"
             />
-            <div className="flex flex-col gap-2 p-6">
+            <div className="flex flex-col gap-3 p-7">
               <Badge className="w-fit">{p.ages}</Badge>
-              <h3>{p.label}</h3>
-              <p className="text-muted-foreground text-[15px]">{p.intro}</p>
+              <h3 className="text-2xl">{p.label}</h3>
+              <p className="text-muted-foreground text-base">{p.intro}</p>
             </div>
           </Link>
         ))}

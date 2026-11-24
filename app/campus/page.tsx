@@ -9,6 +9,7 @@ import { school } from "@/content/school";
 
 export const metadata: Metadata = {
   title: "Campus and facilities",
+  alternates: { canonical: "/campus" },
   description: `Classrooms, labs, library, sports and safety at ${school.fullName}.`,
 };
 

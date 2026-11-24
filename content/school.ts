@@ -6,13 +6,15 @@ export const school = {
   tagline: "Where Learning Blossoms and Every Child Shines",
   motto: "Nurturing the Brain. Strengthening the Body. Inspiring the Soul.",
   session: "2027–28",
-  phone: "+91 95799 23959", // TODO: real number
-  email: "admissions@example.com", // TODO: real email
+
+  phone: "+91 95799 23959",
+  email: "fortianagalapark@gmail.com",
+  email2: "nalandainfo2022@gmail.com", // TODO: confirm which email is the main one
   address: {
     line1: "Zilla Parishad Rd, Nagalapark, Kolhapur, Maharashtra 416003",
     city: "Kolhapur",
     state: "Maharashtra",
-    pin: "416001",
+    pin: "416003",
   },
   hours: [
     { days: "Mon–Fri", time: "8:00–16:00" },

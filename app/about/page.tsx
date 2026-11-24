@@ -10,6 +10,7 @@ import { school } from "@/content/school";
 import { AboutExtra } from "@/components/sections/about-extra";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/about" },
   title: "About us",
   description: `About ${school.fullName}: our story, vision, mission and leadership.`,
 };
@@ -67,7 +68,7 @@ export default function AboutPage() {
         <div className="grid items-start gap-10 min-[900px]:grid-cols-[360px_1fr] min-[900px]:gap-14">
           <ImageFrame
             alt={`Portrait of ${principal?.name ?? "the principal"}`}
-            src={principal?.photo}
+            src={"/images/gallery/principle.webp"}
             ratio="3/4"
           />
           <div>
@@ -83,37 +84,6 @@ export default function AboutPage() {
             <p className="text-ink mt-6 font-semibold">{principal?.name}</p>
             <p className="text-muted-foreground text-sm">{principal?.role}</p>
           </div>
-        </div>
-      </Section>
-      {/* Leadership cards */}
-      <Section tone="white">
-        <SectionHeading
-          eyebrow={about.leadership.eyebrow}
-          title={about.leadership.title}
-        />
-        <div className="mt-10 grid gap-6 min-[640px]:grid-cols-2 min-[900px]:grid-cols-3">
-          {leaders.map((p) => (
-            <div
-              key={p.id}
-              className="rounded-card bg-surface shadow-card overflow-hidden"
-            >
-              <ImageFrame
-                alt={`Portrait of ${p.name}`}
-                src={p.photo}
-                ratio="3/4"
-                className="rounded-none"
-              />
-              <div className="p-6">
-                <h3 className="text-xl">{p.name}</h3>
-                <p className="text-muted-foreground mt-1 text-sm font-semibold">
-                  {p.role}
-                </p>
-                <p className="text-muted-foreground mt-3 text-[15px]">
-                  {p.bio}
-                </p>
-              </div>
-            </div>
-          ))}
         </div>
       </Section>
       {/* Affiliations */}

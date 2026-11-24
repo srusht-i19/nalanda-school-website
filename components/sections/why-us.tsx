@@ -13,7 +13,7 @@ const icons: Record<IconName, LucideIcon> = {
 export function WhyUs() {
   const { whyUs } = home;
   return (
-    <Section className="pt-0">
+    <Section>
       <SectionHeading eyebrow={whyUs.eyebrow} title={whyUs.title} />
       <div className="mt-10 grid gap-6 min-[640px]:grid-cols-2 min-[900px]:grid-cols-4">
         {whyUs.cards.map((c) => {
@@ -21,11 +21,11 @@ export function WhyUs() {
           return (
             <div
               key={c.title}
-              className="nalanda-card rounded-card bg-surface-2 shadow-card flex flex-col gap-3.5 p-7"
+              className="nalanda-card rounded-card bg-surface-2 shadow-card flex flex-col gap-4 p-8"
             >
-              <Icon aria-hidden="true" className="text-primary h-8 w-8" />
-              <h3>{c.title}</h3>
-              <p className="text-muted-foreground text-[15px]">{c.text}</p>
+              <Icon aria-hidden="true" className="text-primary h-10 w-10" />
+              <h3 className="text-2xl">{c.title}</h3>
+              <p className="text-muted-foreground text-base">{c.text}</p>
             </div>
           );
         })}

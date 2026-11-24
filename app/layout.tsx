@@ -5,6 +5,7 @@ import { Footer } from "@/components/sections/footer";
 import { Header } from "@/components/sections/header";
 import { school } from "@/content/school";
 import { AnnouncementBar } from "@/components/sections/announcement-bar";
+import { siteUrl } from "@/content/site-url";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
     template: `%s · ${school.name}`,
   },
   description: `School in ${school.city}, Maharashtra. Admissions open for ${school.session}.`,
+  metadataBase: new URL(siteUrl),
 };
 
 export default function RootLayout({
@@ -47,6 +49,26 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "School",
+              name: "FIA – The Nalanda Campus",
+              url: siteUrl,
+              telephone: "+91 95799 23959",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Zilla Parishad Road, Nagala Park",
+                addressLocality: "Kolhapur",
+                addressRegion: "Maharashtra",
+                postalCode: "416003",
+                addressCountry: "IN",
+              },
+            }),
+          }}
+        />
       </body>
     </html>
   );

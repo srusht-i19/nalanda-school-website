@@ -9,6 +9,7 @@ import { Branches } from "@/components/sections/branches";
 
 export const metadata: Metadata = {
   title: "Contact us",
+  alternates: { canonical: "/contact" },
   description: `Address, phone, email, office hours and enquiry form of ${school.fullName}.`,
 };
 

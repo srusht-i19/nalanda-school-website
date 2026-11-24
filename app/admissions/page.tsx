@@ -14,6 +14,7 @@ import { school } from "@/content/school";
 
 export const metadata: Metadata = {
   title: "Admissions",
+  alternates: { canonical: "/admissions" },
   description: `Admissions for ${school.session} at ${school.fullName}: process, eligibility, documents and enquiry form.`,
 };
 

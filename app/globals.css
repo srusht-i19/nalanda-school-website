@@ -244,3 +244,8 @@ header nav a[aria-current="page"] {
   background: transparent !important;
   transform: none !important;
 }
+/* Home page: section headings match the hero scale */
+main:has(#home-hero) > section h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+}

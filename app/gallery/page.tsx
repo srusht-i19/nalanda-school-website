@@ -7,6 +7,7 @@ import { school } from "@/content/school";
 
 export const metadata: Metadata = {
   title: "Gallery",
+  alternates: { canonical: "/gallery" },
   description: `Photos of campus, classrooms, events and sports at ${school.fullName}.`,
 };
 

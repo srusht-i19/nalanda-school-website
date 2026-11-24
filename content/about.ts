@@ -35,10 +35,7 @@ export const about = {
       "Placeholder: the principal's message will be provided by the school.",
     ],
   },
-  leadership: {
-    eyebrow: "Leadership and management",
-    title: "The people who lead our school.",
-  },
+
   affiliations: {
     eyebrow: "Affiliations and recognitions",
     title: "Trusted and recognised.",

@@ -10,6 +10,7 @@ import { PrePrimary } from "@/components/sections/pre-primary";
 
 export const metadata: Metadata = {
   title: "Academics",
+  alternates: { canonical: "/academics" },
   description: `Curriculum, learning stages and assessment at ${school.fullName}.`,
 };
 
