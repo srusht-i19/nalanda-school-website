@@ -37,11 +37,11 @@ export const academics = {
       label: "Primary",
       age: "Age range to be confirmed",
       subjects: [
-        "English",
-        "Mathematics",
-        "Environmental studies",
-        "Languages",
-        "Art and creativity",
+        "Language and communication",
+        "Mathematical thinking",
+        "Experiential learning",
+        "Storytelling and imagination",
+        "Art and craft",
       ],
       approach:
         "Our primary section lays strong foundations by combining academic excellence with creativity, values, practical experiences and the all-round development of every child.",

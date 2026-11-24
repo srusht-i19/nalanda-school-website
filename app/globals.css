@@ -249,3 +249,13 @@ main:has(#home-hero) > section h2 {
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.15;
 }
+/* Keyboard focus rings */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[role="tab"]:focus-visible {
+  outline: 3px solid #f97316;
+  outline-offset: 3px;
+}

@@ -17,8 +17,6 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   const principal = faculty.find((p) => p.id === "principal");
-  const leaders = faculty.filter((p) => p.id !== "principal");
-
   return (
     <>
       <PageHero
