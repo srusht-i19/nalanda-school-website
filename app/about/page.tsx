@@ -42,6 +42,7 @@ export default function AboutPage() {
             src="/images/gallery/nalanda-building-2.webp"
             alt={about.story.imageAlt}
             ratio="4/3"
+            priority
           />
         </div>
       </Section>{" "}
